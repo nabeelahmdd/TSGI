@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+<br><br>
+<section class="section">
+<div class="container"><br><br>
+  <h2 class="title has-text-centered">Contact the TSGI</h2><br><br>
+  <div class="columns">
+    <div class="column is-6">
+      <h4 class="title is-spaced is-4">Let's talk about the future</h4>
+      <p class="subtitle">We're here to answer your questions and discuss the your future education planing</p>
+      <div>
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-24x24"><img src="placeholder/icons/map-marker.svg" alt=""></figure>
+          </div>
+          <div class="media-content">
+            <div class="content">
+              <p>TSGI, Navalnagar, Burhanpur, Madhya Pradesh 450331</p>
+            </div>
+          </div>
+        </div>
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-24x24"><img src="placeholder/icons/phone.svg" alt=""></figure>
+          </div>
+          <div class="media-content">
+            <div class="content">
+              <p>073252 88070</p>
+            </div>
+          </div>
+        </div>
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-24x24"><img src="placeholder/icons/envelope.svg" alt=""></figure>
+          </div>
+          <div class="media-content">
+            <div class="content">
+              <p>tsgi@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-5 is-offset-1">
+      <form method="post" action="/myapp/contact/">
+        {% csrf_token %}
+        <div class="field">
+          <div class="control">
+            <input class="input" type="text" name="name" placeholder="Name">
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input class="input" type="email" name="email" placeholder="Email">
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input class="input" type="phone" name="phone" placeholder="phone">
+          </div>
+        </div>
+        
+        <div class="field">
+          <div class="control">
+            <textarea class="textarea" rows="5" name="desc" placeholder="Write something..."></textarea>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <button class="button is-primary is-fullwidth" type="submit">Submit</button><br><br><br><br>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</section><br><br>
+
+
+{% endblock %}

@@ -45,3 +45,14 @@ class Course(models.Model):
     crimg = models.ImageField(upload_to = "images\\", null=True)
     def __str__(self):
         return self.title
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    phone = models.CharField(validators=[RegexValidator("^0?[5-9]{1}\d{9}$")], max_length=11, null=True, blank=True)
+    desc = models.TextField()
+    cr_date = models.DateField()
+
+    def __str__(self):
+        return self.name

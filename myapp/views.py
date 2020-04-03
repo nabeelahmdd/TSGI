@@ -1,9 +1,15 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
-from myapp.models import Notice, Profile, Course
-from django.views.generic.edit import UpdateView
-from django.utils.decorators import method_decorator
+from myapp.models import Notice, Profile, Course, Contact
+from django.views.generic.detail import DetailView
 from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.db.models import Q
+from django.views.generic.edit import UpdateView, CreateView
+from django.http.response import HttpResponseRedirect
+from django.views.generic.base import TemplateView
+from datetime import datetime
+from django.contrib import messages
 
 
 
@@ -25,3 +31,17 @@ class ProfileUpdateView(UpdateView):
 
 class  CourseListView(ListView):
     model = Course
+
+
+def contact(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        desc = request.POST.get('desc')
+
+        contact = Contact(name=name, email=email, phone=phone, desc=desc, cr_date=datetime.today())
+        
+        contact.save()
+        messages.success(request, 'Your message has been sent.')
+    return render(request, "contact.html")
