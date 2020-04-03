@@ -6,4 +6,5 @@ urlpatterns = [
     path('home/', views.home),
     path('notice/', views.NoticeListView.as_view()),
     path('profile/edit/<int:pk>', views.ProfileUpdateView.as_view(success_url="/myapp/notice")),
+    path('course/', views.CourseListView.as_view()),
 ]

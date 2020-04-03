@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.admin.options import ModelAdmin
-from myapp.models import Notice, Branch
+from myapp.models import Notice, Branch, Profile, Course
 
 
 
@@ -13,3 +13,5 @@ class NoticeAdmin(ModelAdmin):
 
 admin.site.register(Notice, NoticeAdmin)
 admin.site.register(Branch)
+admin.site.register(Profile)
+admin.site.register(Course)

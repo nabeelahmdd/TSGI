@@ -37,3 +37,11 @@ class Profile(models.Model):
     resume = models.FileField(upload_to = "doc\\", null=True)
     def __str__(self):
         return self.user
+
+class Course(models.Model):
+    title = models.CharField(max_length=100)
+    discription = models.TextField()
+    cr_date = models.DateTimeField(auto_now_add=True)
+    crimg = models.ImageField(upload_to = "images\\", null=True)
+    def __str__(self):
+        return self.title
