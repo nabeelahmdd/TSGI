@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="title has-text-centered">Recent Notices</h2>
+{% for n1 in notice_list %}
+<div class="container is-fluid">
+	<section class="section">
+    	<div class="container">
+        	<div class="block">
+            	<div class="card block">
+            		<div class="card-content">
+                		<div class="media">
+                  			<div class="media-left">
+                    			<figure class="image is-64x64"><img class="is-rounded" src="https://bulma.dev/placeholder/pictures/bg_circle.svg?primary=00d1b2" alt=""></figure>
+                  			</div>
+                  			<div class="media-content">
+
+			                    <h3 class="title is-4">
+                            {{n1.subject}}
+			                    </h3>
+			                    <p>{{n1.mmsg}}</p><br>
+			                    <small style="display: flex; justify-content: center; align-items: center;"><i class="far fa-clock"></i>{{n1.cr_date}}</small>
+                 		 	</div>
+                		</div>
+              		</div>
+            	</div>
+        	</div>
+    	</div>
+	</section>
+</div>
+{% endfor %}
+{% endblock %}
