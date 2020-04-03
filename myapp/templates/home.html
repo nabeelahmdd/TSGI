@@ -1,9 +1,146 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>hii</title>
-</head>
-<body>
-<h1>hello</h1>
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+   
+<!-- carousel start here -->
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" style="margin-right: -10%; margin-left: -10%;">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">{% load static %}
+      <img src="{% static 'images/tsgi5.png'%}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <div class="container has-text-centered">
+          <h1 class="title is-spaced"  style="color: white;">TSGI</h1>
+          <h2 class="subtitle">Thakur Shivkumar Singh Group Of institution</h2>
+          <div class="buttons is-centered"><a class="control button is-primary" href="/myapp/about/">More Info</a><a class="control button is-light" href="/myapp/contact/">Contact Us</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">{% load static %}
+      <img src="{% static 'images/tsgi2.jpg'%}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <div class="container has-text-centered">
+          <h1 class="title is-spaced"  style="color: white;">TSGI</h1>
+          <h2 class="subtitle">Thakur Shivkumar Singh Group Of institution</h2>
+          <div class="buttons is-centered"><a class="control button is-primary" href="/myapp/about/">More Info</a><a class="control button is-light" href="/myapp/contact/">Contact Us</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">{% load static %}
+      <img src="{% static 'images/tsgi3.jpg'%}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <div class="container has-text-centered">
+          <h1 class="title is-spaced" style="color: white;">TSGI</h1>
+          <h2 class="subtitle">Thakur Shivkumar Singh Group Of institution</h2>
+          <div class="buttons is-centered"><a class="control button is-primary" href="/myapp/about/">More Info</a><a class="control button is-light" href="/myapp/contact/">Contact Us</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<!-- carousel end here -->
+
+<!-- courses start here -->                
+      <section class="section">
+        <div class="container">
+          <h2 class="title has-text-centered">Our Courses</h2>
+          <div class="columns is-multiline">
+            <div class="column is-6-tablet is-3-desktop">
+              <div class="card" style="height: 100%">
+                <div class="card-image"><a href="#">
+                  {% load static %} 
+                  <img src="{% static 'images/engineering.jpg' %}" alt="" width="420"></a></div>
+                <div class="card-content">
+                  <h5 class="title"><a href="#">Engineering</a></h5>
+                  <p>Architect is a profession who visualizes the structure of the building or any other project before it is actually developed.</p>
+                </div>
+              </div>
+            </div>
+            <div class="column is-6-tablet is-3-desktop">
+              <div class="card" style="height: 100%">
+                <div class="card-image"><a href="#">
+                  {% load static %} 
+                  <img src="{% static 'images/pollytechnic.jpg' %}" alt="" width="420"></a></div>
+                <div class="card-content">
+                  
+                  <h5 class="title"><a href="#">Pollytechnic</a></h5>
+                  <p>What makes decentralization so great? Let me enlighten you with my wisdom</p>
+                </div>
+              </div>
+            </div>
+            <div class="column is-6-tablet is-3-desktop">
+              <div class="card" style="height: 100%">
+                <div class="card-image"><a href="#">
+                  {% load static %} 
+                  <img src="{% static 'images/pharmacy.jpg' %}" alt="" width="420"></a></div>
+                <div class="card-content">
+                  
+                  <h5 class="title"><a href="#">Pharmacy</a></h5>
+                  <p>This is a short story about how we uncovered an insane problem with our ICO, fixed it, and still managed to secure vast funding.</p>
+                </div>
+              </div>
+            </div>
+            <div class="column is-6-tablet is-3-desktop">
+              <div class="card" style="height: 100%">
+                <div class="card-image"><a href="#">
+                  {% load static %} 
+                  <img src="{% static 'images/mba.jpg' %}" alt="" width="420"></a></div>
+                <div class="card-content">
+                  <h5 class="title"><a href="#">Business Management</a></h5>
+                  <p>The need for managers in organization is continuously increasing as well as the expectations from managers are continuously changing.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="buttons is-centered" style="padding-top: 20px;"><a class="button is-primary" href="/myapp/course/" >Read more</a></div>
+        </div>
+      </section>
+<!-- courses end here -->
+
+<!-- info start here -->             
+      <section class="section">
+        <div class="container has-text-centered">
+          <h2 class="title">TSGI Info</h2>
+          <div class="columns is-multiline is-centered">
+            <div class="column is-8 is-4-widescreen">
+              <div class="block">
+                {% load static %}
+                <img src="{% static 'images/tsgi1.jpg'%}" alt="" width="420">
+              </div>
+              <h4 class="title"><small class="number">1</small> Workshop</h4>
+              <p>Using our Piper Assistant application, you can move your data to be stored our decentralized network with simple drag & drop.</p>
+            </div>
+            <div class="column is-8 is-4-widescreen">
+              <div class="block">
+                {% load static %}
+                <img src="{% static 'images/tsgi5.png'%}" alt="" width="420">
+              </div>
+              <h4 class="title"><small class="number">2</small> Library</h4>
+              <p>We want to make sure that you can keep using the software that you use to manage your  business.</p>
+            </div>
+            <div class="column is-8 is-4-widescreen">
+              <div class="block">
+                {% load static %}
+                <img src="{% static 'images/tsgi3.jpg'%}" alt="" width="420">
+              </div>
+              <h4 class="title"><small class="number">3</small> Canteen</h4>
+              <p>As with all innovative technologies, sometimes unpredictable things will happen, and you can always count on our support to solve issues for&nbsp;you.</p>
+            </div>
+          </div>
+          <div class="buttons is-centered"><a class="button is-primary" href="/myapp/about/">More Info</a></div>
+        </div>
+      </section>
+<!-- info end here -->
+{% endblock %}
+		
