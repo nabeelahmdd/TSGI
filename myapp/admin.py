@@ -1,10 +1,6 @@
 from django.contrib import admin
-
 from django.contrib.admin.options import ModelAdmin
-
-
-
-from myapp.models import Notice
+from myapp.models import Notice, Branch
 
 
 
@@ -16,3 +12,4 @@ class NoticeAdmin(ModelAdmin):
     list_filter = ["cr_date"]
 
 admin.site.register(Notice, NoticeAdmin)
+admin.site.register(Branch)
