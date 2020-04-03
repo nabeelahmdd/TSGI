@@ -31,14 +31,17 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'myapp',
+    'myapp.apps.MyappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'registration',
+    'crispy_forms',
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -106,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -118,4 +121,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+ACCOUNT_ACTIVATION_DAYS = 3
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = 'nabeelahmddd@gmail.com'
+EMAIL_HOST_PASSWORD = 'lucky0111'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+LOGIN_REDIRECT_URL = "/"
+
 STATIC_URL = '/static/'
+PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
+MEDIA_ROOT = PROJECT_ROOT + '/static/'
+MEDIA_URL = '/media/'
+
