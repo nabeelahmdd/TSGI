@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+      <section class="hero"><div class="hero-body">
+          <div class="container has-text-centered">
+            <h1 class="title is-spaced">About Us</h1>
+            <h2 class="subtitle">Decentralized, secure, private. The PiperNet is on it's way to revolutionize every smartphone, PC, and smart-fridge near you.</h2>
+            <div class="buttons is-centered"><a class="control button is-primary" href="#">Sign up for free</a><a class="control button is-light" href="#">Read more</a></div>
+          </div>
+        </div>
+      </section>
+                
+      <section class="section" style="background-color: #FAFAFA;">
+        <div class="container">
+          <h2 class="title has-text-centered">Gallery</h2><br>
+          <div class="columns is-multiline">{% load static%}
+            <div class="column is-4"><a href="#"><img src="{% static 'images/tsgi5.png'%}" alt=""></a></div>
+            <div class="column is-4"><a href="#"><img src="{% static 'images/tsgi2.jpg'%}" alt=""></a></div>
+            <div class="column is-4"><a href="#"><img src="{% static 'images/tsgi2.jpg'%}" alt=""></a></div>
+            <div class="column is-4"><a href="#"><img src="{% static 'images/tsgi5.png'%}" alt=""></a></div>
+            <div class="column is-4"><a href="#"><img src="{% static 'images/tsgi3.jpg'%}" alt=""></a></div>
+            <div class="column is-4"><a href="#"><img src="{% static 'images/tsgi2.jpg'%}" alt=""></a></div>
+          </div>
+        </div>
+      </section><br><br>
+{% endblock %}

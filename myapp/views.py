@@ -18,10 +18,21 @@ from django.contrib import messages
 def home(request):
     return render(request, "home.html")
 
-
+def about(request):
+    return render(request, "about.html")
 
 class  NoticeListView(ListView):
     model = Notice
+    
+    def get_queryset(self):
+        si = self.request.GET.get("si")
+        if si == None:
+            si = ""
+            
+        if self.request.user.is_superuser:
+            return Notice.objects.filter(Q(subject__icontains =si) | Q(mmsg__icontains =si)).order_by("-id")
+        else:
+            return Notice.objects.filter(Q(branch=self.request.user.profile.branch)| Q(branch__isnull=True)).filter(Q(subject__icontains =si) | Q(mmsg__icontains =si)).order_by("-id")
 
 @method_decorator(login_required, name="dispatch")   
 class ProfileUpdateView(UpdateView):
